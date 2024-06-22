@@ -1,0 +1,81 @@
+---
+title: DAP Building Blocks
+---
+
+Decentralized Agnostic Paytags (DAPs) are a new approach to sending and receiving payments across
+different apps and currencies. To understand how DAPs work, it's essential to grasp the key
+components that make up the DAP ecosystem. In this section, we'll explore the building blocks of
+DAPs and how they interact to simplify cross-platform payments.
+
+## Decentralized Identifiers (DIDs)
+
+At the heart of the DAP ecosystem are Decentralized Identifiers (DIDs). A DID is a unique,
+cryptographically-verifiable identifier that represents an individual, organization, or entity. DIDs
+are designed to be self-sovereign, meaning that the owner has full control over their identifier and
+can prove ownership without relying on a central authority.
+
+In the context of DAPs, DIDs serve as the foundation for associating payment addresses with a
+human-readable handle. When a user registers a DAP, they're essentially creating a mapping between
+their DID and a chosen handle.
+
+## DAP Handles
+
+A DAP handle is a human-friendly, email-like identifier that can be shared with others to send and
+receive payments. It consists of two parts: a local handle and a domain.
+For example: `@alice/example.com`.
+
+The local handle is unique within the context of the domain. It's up to the domain owner to define
+the format and requirements for local handles, but typically they follow a set of common conventions
+to ensure readability and compatibility.
+
+## DAP Registries
+
+DAP registries are the services responsible for managing the mapping between DAP handles and DIDs.
+Each domain that supports DAPs must provide its own registry, which exposes a standardized API for
+registering and resolving DAP handles.
+
+When a user registers a DAP handle, the registry associates the handle with the user's DID and
+stores this mapping. When someone wants to send a payment to a DAP, they query the registry to
+resolve the handle to its corresponding DID.
+
+## Money Addresses
+
+Money addresses are the final piece of the DAP puzzle. They represent the actual destination for a
+payment, whether it's a cryptocurrency wallet, a bank account, or any other type of financial
+account.
+
+In the DAP ecosystem, money addresses are expressed as Uniform Resource Names (URNs) with a
+standardized format: `urn:<currency_code>:<address>`. For example, a Bitcoin address might be
+represented as `urn:btc:1BvBMSEYstWetqTFn5Au4m4GFg7xJaNVN2`.
+
+When a user registers a DAP, they can associate one or more money addresses with their DID. This
+allows them to receive payments in multiple currencies or at multiple destinations.
+
+## Putting it All Together
+
+Now that we've covered the key building blocks, let's walk through a typical DAP payment flow to see
+how they all fit together:
+
+1. Alice registers a DAP handle (`@alice/example.com`) with her DID (`did:example:123`) at the
+   `example.com` DAP registry.
+2. Alice associates a Bitcoin address (`urn:btc:1BvBMSEYstWetqTFn5Au4m4GFg7xJaNVN2`) with her DID.
+3. Bob wants to send Alice a payment, so he queries the `example.com` registry to resolve
+   `@alice/example.com` to Alice's DID.
+4. Bob retrieves Alice's Bitcoin address from her DID document and sends the payment to
+   `urn:btc:1BvBMSEYstWetqTFn5Au4m4GFg7xJaNVN2`.
+
+By abstracting away the complexity of different payment networks and currencies, DAPs provide a
+simple, unified interface for sending and receiving payments. The decentralized nature of DIDs and
+the standardized APIs for DAP registries ensure that the ecosystem remains open, interoperable, and
+resilient.
+
+## Next Steps
+
+Now that you have a high-level understanding of the DAP building blocks, you might want to:
+
+- Dive deeper into the benefits and use cases for DAPs in our Why DAPs? section.
+- Explore how DAPs compare to traditional payment solutions in our Comparing Alternatives section.
+- Learn more about the technical specifications for DAPs in our Reference section.
+
+If you have any questions or feedback, don't hesitate to reach out to our team. We're here to help
+you navigate the exciting world of Decentralized Agnostic Paytags!

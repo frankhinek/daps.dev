@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Web Page</title>
+</head>
+<body>
+  <header>
+    <h1>Welcome to My Web Page</h1>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h2>About Me</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris.</p>
+    </section>
+
+    <section>
+      <h2>My Projects</h2>
+      <ul>
+        <li>Project 1</li>
+        <li>Project 2</li>
+        <li>Project 3</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 My Web Page. All rights reserved.</p>
+  </footer>
+
+  <script>
+
+    console.log(window.ethereum)
+  </script>
+
+  <script type="module">
+    import { ethers } from "https://cdnjs.cloudflare.com/ajax/libs/ethers/6.7.0/ethers.min.js";
+    let signer = null;
+
+    let provider;
+    // if (window.ethereum == null) {
+
+    //     // If MetaMask is not installed, we use the default provider,
+    //     // which is backed by a variety of third-party services (such
+    //     // as INFURA). They do not have private keys installed,
+    //     // so they only have read-only access
+    //     console.log("MetaMask not installed; using read-only defaults")
+    //     provider = ethers.getDefaultProvider()
+
+    // } else {
+
+    //     // Connect to the MetaMask EIP-1193 object. This is a standard
+    //     // protocol that allows Ethers access to make all read-only
+    //     // requests through MetaMask.
+    //     provider = new ethers.BrowserProvider(window.ethereum)
+
+    //     // It also provides an opportunity to request access to write
+    //     // operations, which will be performed by the private key
+    //     // that MetaMask manages for the user.
+    //     signer = await provider.getSigner();
+    // }
+    // console.log(provider);
+  </script>
+</body>
+</html>
