@@ -1,6 +1,6 @@
 # DAP Documentation Site
 
-This repository contains the source code, content, and assets for [**daps.dev**](https://daps.dev),
+This directory contains the source code, content, and assets for [**daps.dev**](https://daps.dev),
 a site containing documentation and learning resources for Decentralized Agnostic Paytags (DAPs).
 
 ## Contributing
@@ -10,7 +10,7 @@ it's fixing typos, adding new content, or suggesting enhancements, your contribu
 These links will help you get started:
 
 * [Contribution Guide](./CONTRIBUTING.md)
-* [Code of Conduct](./CODE_OF_CONDUCT.md)
+* [Code of Conduct](../CODE_OF_CONDUCT.md)
 * [Join the `#dap` channel on Discord](https://discord.gg/tbd)
 
 ## Issues and Feedback
