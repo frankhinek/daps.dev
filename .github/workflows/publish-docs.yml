@@ -1,4 +1,4 @@
-name: Deploy Docs Site to GitHub Pages
+name: Publish Docs Site
 
 on:
   # Trigger the workflow every time you push to the `main` branch
@@ -14,21 +14,32 @@ permissions:
   pages: write
   id-token: write
 
+# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+env:
+  BUILD_PATH: "docs"
+
 jobs:
   build:
+    name: Build
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout your repository using git
+      - name: Checkout
         uses: actions/checkout@v4
-      - name: Install, build, and upload your site
-        uses: withastro/action@v2
+      - name: Install, build, and upload site
+        uses: withastro/action@877fd7e5cf5dc5d213f6701c790972aa25452ad3 # v2.0.1
         with:
-          path: ./docs # The root location of your Astro project inside the repository.
+          path: ${{ env.BUILD_PATH }}
           node-version: 20 # The specific version of Node that should be used to build your site. Defaults to 20. (optional)
           package-manager: pnpm@latest # The Node package manager that should be used to install dependencies and build your site.
 
   deploy:
     needs: build
+    name: Deploy
     runs-on: ubuntu-latest
     environment:
       name: github-pages
